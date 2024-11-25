@@ -53,12 +53,12 @@ A API implementa as seguintes rotas básicas:
 ## Como Executar
 ### 1. **Clonar o Repositório**
 ```
-git clone https://github.com/joycecampelos/formacao_academica.git
+git clone https://github.com/joycecampelos/pos_graduacao-desenvolvimento_fullstack.git
 ```
 
 ### 2. **Navegar até o Diretório do Projeto**
 ```
-cd formacao_academica/pos_graduacao-desenvolvimento_fullstack/backend/nodejs/api_users
+cd pos_graduacao-desenvolvimento_fullstack/backend/nodejs/api_users
 ```
 
 ### 3. **Executar o Projeto**
