@@ -42,12 +42,13 @@ Este projeto tem como objetivo implementar dois endpoints em uma API para gerenc
 ## Como Executar
 ### 1. **Clonar o Repositório**
 ```
-git clone https://github.com/joycecampelos/formacao_academica.git
+git clone https://github.com/joycecampelos/pos_graduacao-desenvolvimento_fullstack.git
 ```
+pos_graduacao-desenvolvimento_fullstack/backend/nodejs/api_books
 
 ### 2. **Navegar até o Diretório do Projeto**
 ```
-cd formacao_academica/pos_graduacao-desenvolvimento_fullstack/backend/nodejs/api_books
+cd pos_graduacao-desenvolvimento_fullstack/backend/nodejs/api_books
 ```
 
 ### 3. **Instalar as Dependências**
