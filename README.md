@@ -1,4 +1,4 @@
-# Exercícios e projetos
+# Exercícios e Projetos
 
 Neste repositório se encontram os exercícios e projetos desenvolvidos durante a pós-graduação em Desenvolvimento Full Stack.
 
