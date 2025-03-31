@@ -1,0 +1,25 @@
+{
+  "name": "backend-users",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "test:app": "jest src/app.spec.js",
+    "test:repository": "jest src/repository.spec.js",
+    "test:watch app": "jest --watchAll src/app.spec.js",
+    "test:watch repository": "jest --watchAll src/repository.spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongo": "^0.1.0"
+  }
+}
