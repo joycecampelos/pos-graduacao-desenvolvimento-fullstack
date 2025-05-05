@@ -12,11 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Calculadora IMC',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
-          primary: Colors.grey[850],
-        ),
-        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
       debugShowCheckedModeBanner: false,
       home: CalculadoraIMC(),
@@ -93,86 +89,96 @@ class _CalculadoraIMCState extends State<CalculadoraIMC> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Calculadora de IMC')),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            TextField(
-              controller: _pesoController,
-              decoration: InputDecoration(
-                labelText: 'Peso (kg)',
-                border: OutlineInputBorder(),
-              ),
-              keyboardType: TextInputType.number,
-            ),
-            SizedBox(height: 16),
-            TextField(
-              controller: _alturaController,
-              decoration: InputDecoration(
-                labelText: 'Altura (m)',
-                border: OutlineInputBorder(),
-              ),
-              keyboardType: TextInputType.number,
-            ),
-            SizedBox(height: 16),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: _calcularIMC,
-                  child: Text('Calcular IMC'),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Calculadora de IMC'),
+          centerTitle: true,
+          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+          titleTextStyle: TextStyle(
+            color: Colors.grey[850],
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              TextField(
+                controller: _pesoController,
+                decoration: InputDecoration(
+                  labelText: 'Peso (kg)',
+                  border: OutlineInputBorder(),
                 ),
-                SizedBox(height: 5),
-                ElevatedButton(
-                  onPressed: _limparCampos,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[350],
+                keyboardType: TextInputType.number,
+              ),
+              SizedBox(height: 16),
+              TextField(
+                controller: _alturaController,
+                decoration: InputDecoration(
+                  labelText: 'Altura (m)',
+                  border: OutlineInputBorder(),
+                ),
+                keyboardType: TextInputType.number,
+              ),
+              SizedBox(height: 16),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: _calcularIMC,
+                    child: Text('Calcular IMC'),
                   ),
-                  child: Text('Limpar'),
-                ),
-              ],
-            ),
-            SizedBox(height: 35),
-            if (_imc > 0)
-              Container(
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: _corClassificacao().withOpacity(0.7),
-                  border: Border.all(
-                    color: _corClassificacao(),
-                    width: 2,
+                  SizedBox(height: 5),
+                  ElevatedButton(
+                    onPressed: _limparCampos,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[300],
+                    ),
+                    child: Text('Limpar'),
                   ),
-                  borderRadius: BorderRadius.circular(25),
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
-                ),
-                child: Column(
-                  children: [
-                    Text(
-                      'IMC: ${_imc.toStringAsFixed(1).replaceAll('.', ',')}',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 5),
-                    Text(
-                      _classificacao,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
+                ],
               ),
-          ],
+              SizedBox(height: 35),
+              if (_imc > 0)
+                Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: _corClassificacao().withOpacity(0.7),
+                    border: Border.all(color: _corClassificacao(), width: 2),
+                    borderRadius: BorderRadius.circular(25),
+                    boxShadow: [
+                      BoxShadow(color: Colors.black12, blurRadius: 5),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Text(
+                        'IMC: ${_imc.toStringAsFixed(1).replaceAll('.', ',')}',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        _classificacao,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );

@@ -19,7 +19,7 @@ Um aplicativo simples desenvolvido em **Flutter** para calcular o **Índice de M
 
 ## Tecnologias
 
-- Flutter (Material Design 3)
+- Flutter
 - Dart
 
 
