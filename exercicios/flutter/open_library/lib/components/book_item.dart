@@ -4,7 +4,7 @@ import '../models/book_model.dart';
 class BookItem extends StatelessWidget {
   final Book book;
 
-  const BookItem({required this.book});
+  const BookItem({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
